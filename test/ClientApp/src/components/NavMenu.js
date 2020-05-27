@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Container, Navbar, Nav, NavDropdown, Form, Button, FormControl, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 
@@ -24,23 +24,17 @@ export class NavMenu extends Component {
   render () {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+        <Navbar bg="dark" variant="dark" className="box-shadow" expand="lg">
           <Container>
-            <NavbarBrand tag={Link} to="/">test</NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-              <ul className="navbar-nav flex-grow">
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-                </NavItem>
-              </ul>
-            </Collapse>
+            <Navbar.Brand href="#home"><span style={{color: '#F9CA24'}}>$</span>ilkresell</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ml-auto">
+                <Nav.Link href="/about"><Button variant="dark">About us</Button></Nav.Link>
+                <Nav.Link href="#link"><Button variant="dark">Sell smth</Button></Nav.Link>
+                <Nav.Link href="#link"><Button variant="warning" style={{borderRadius: '50px', paddingRight: '1.3rem', paddingLeft: '1.3rem'}}>Join us</Button></Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
           </Container>
         </Navbar>
       </header>

@@ -1,0 +1,13 @@
+.backgroundImage{
+    background-image: url('./static/Untitled.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    height: 90vh;
+}
+
+@media(min-width: 992px){
+    .backgroundImage{
+        height: 91vh;
+    }
+}
